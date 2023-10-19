@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css')}}">
+  <title>{{ title }}</title>
+  <script src="{{ url_for('static', filename='toggler.js')}}"></script>
+</head>
+
+<body>
+
+  <div class="grid">
+
+
+    <div class="sidebar_closed">
+      <a href="#" onclick="toggler();return false;">
+          <div class="hamburger"></div>
+      </a>
+    </div>
+
+    <div class="sidebar_open">
+      <a href="{{ url_for('homepage') }}">Home Page</a>
+      <h1> </h1>
+    </div>
+
+
+
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  </div>
+
+</body>
+
+</html>

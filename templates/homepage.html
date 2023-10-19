@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="heading">
+    <h1>Home</h1>
+</div>
+
+<form method="POST" action="{{url_for('test')}}">
+    <div class=form>
+    <p>Title </p>{{ form.title }}
+    <br>
+    <p>Author </p>{{ form.author }}
+    <br>
+    <p>Genre </p>{{ form.genre }}
+    <input type="submit" value="Submit">
+    </div>
+
+
+{% endblock content %}

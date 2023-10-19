@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Result Page</h1>
+{% for item in number %}
+<button type="button" class="collapsible">{% print(item["title"]) %}</button>
+<div class="content">
+ <p> Written by {% print(item["author_name"]) %} </p>
+ <br>
+ <br>
+ <p> First published in {% print(item["first_publish_year"]) %} </p>
+</div>
+
+<br>
+<br>
+{% endfor %}
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+{% endblock content %}
